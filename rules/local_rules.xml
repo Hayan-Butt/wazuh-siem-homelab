@@ -1,11 +1,10 @@
 <!--
   Wazuh Custom Detection Rules
-  Author: Hayan Butt
   Purpose: Homelab detections mapped to MITRE ATT&CK
   Tested on: Wazuh 4.14.8
 -->
 
-<group name="local,syslog,sshd,">
+<group name="local,syslog,">
 
   <!-- Base rule: UFW blocked a connection -->
   <rule id="100100" level="3">
@@ -22,29 +21,6 @@
     <group>reconnaissance,network_scan,custom</group>
     <mitre>
       <id>T1046</id>
-    </mitre>
-  </rule>
-
-  <!-- STAGE 2: SSH Brute Force Detection -->
-  <!-- Fires when 8+ SSH auth failures occur in 120 seconds -->
-  <rule id="100102" level="10" frequency="8" timeframe="120" ignore="60">
-    <if_matched_sid>5760</if_matched_sid>
-    <description>SSH Brute Force Attempt Detected - Multiple Failed Logins</description>
-    <group>authentication_failed,brute_force,custom</group>
-    <mitre>
-      <id>T1110</id>
-    </mitre>
-  </rule>
-
-  <!-- STAGE 3: Backdoor User Creation Detection -->
-  <!-- Fires when /etc/passwd changes (FIM real-time) -->
-  <rule id="100103" level="12">
-    <if_sid>550</if_sid>
-    <match>/etc/passwd</match>
-    <description>Backdoor User Account Created - /etc/passwd modified</description>
-    <group>persistence,user_creation,custom</group>
-    <mitre>
-      <id>T1136</id>
     </mitre>
   </rule>
 
