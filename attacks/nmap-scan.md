@@ -7,4 +7,4 @@ Simulate network reconnaissance against the target node and verify Wazuh detects
 **Tool used:** Nmap (from Kali Linux)
 **Command:**
 ```bash
-nmap -sT -p 1-1000 -T4 --min-rate 500 192.168.0.185
+nmap -sT -p 1-1000 -T4 --min-rate 500 <ip>
