@@ -34,5 +34,5 @@ This homelab simulates real-world attacks against a monitored Ubuntu target node
 - [ ] Detect backdoor user creation (T1136)
 
 ## Connect
-Built by **[Your Name]** — [LinkedIn](https://linkedin.com/in/yourprofile)
+Built by **Hayan Butt** — [LinkedIn](https://www.linkedin.com/in/hayan-butt-582226296/)
 Open to entry-level SOC Analyst opportunities in the UAE.
